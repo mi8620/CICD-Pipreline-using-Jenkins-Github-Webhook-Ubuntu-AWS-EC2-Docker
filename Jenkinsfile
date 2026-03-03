@@ -11,7 +11,7 @@ pipeline {
     stages {
         stage('Clone Repo'){
             steps{
-                git branch: 'main', url: 'https://github.com/mi8620/CICD-Pipreline-using-Jenkins-Github-Webhook-Ubuntu-AWS-EC2-Docker'
+                git branch: 'main', url: 'https://github.com/mi8620/CICD-Pipreline-using-Jenkins-Github-Webhook-Ubuntu-AWS-EC2-Docker.git'
             }
         }
 
@@ -39,7 +39,7 @@ pipeline {
             steps {
                emailext(
                 subject: "NestJS App Deployed Successfully on EC2!",
-                body: "Your Nest JS app is Deployed! http://44.223.69.7:${PORT}/",
+                body: "Your Nest JS app is Deployed! http://98.93.104.125:${PORT}/",
                 to: "${EMAIL}"
                )
             }
